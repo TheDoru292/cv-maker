@@ -2,6 +2,17 @@ import React from "react";
 import "../styles/content.css";
 
 class Content extends React.Component {
+  constructor() {
+    super();
+    this.state = {};
+
+    this.createForm = this.createForm.bind(this);
+  }
+
+  createForm(formName) {
+    console.log(formName);
+  }
+
   render() {
     return (
       <div className="content">
@@ -25,19 +36,34 @@ class Content extends React.Component {
 
           <div className="cv-work">
             <h2 className="cv-title">Work Experiences</h2>
-            <button className="work-button">+ Add Work Experience</button>
+            <button
+              className="work-button"
+              onClick={(e) => this.createForm("work")}
+            >
+              + Add Work Experience
+            </button>
           </div>
           <hr></hr>
 
           <div className="cv-education">
             <h2 className="cv-title">Education</h2>
-            <button className="education-button">+ Add Education</button>
+            <button
+              className="education-button"
+              onClick={(e) => this.createForm("education")}
+            >
+              + Add Education
+            </button>
           </div>
           <hr></hr>
 
           <div className="cv-skills">
             <h2 className="cv-title">Skills</h2>
-            <button className="skills-button">+ Add Skills</button>
+            <button
+              className="skills-button"
+              onClick={(e) => this.createForm("skills")}
+            >
+              + Add Skills
+            </button>
           </div>
           <hr></hr>
         </div>

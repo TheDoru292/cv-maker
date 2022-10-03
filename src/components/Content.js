@@ -13,34 +13,33 @@ class Content extends React.Component {
             </div>
             <div className="cv-header-meta">
               <p>Address</p>
-              <p>Adress</p>
               <p>Github</p>
               <p>Linked.in</p>
               <p>Phone</p>
             </div>
             <div className="cv-header-role">
-              <p>Current Role</p>
+              <p className="cv-header-role-text">Current Role</p>
             </div>
-            <hr></hr>
           </div>
+          <hr></hr>
 
           <div className="cv-work">
             <h2 className="cv-title">Work Experiences</h2>
-            <button>Add Work Experience</button>
-            <hr></hr>
+            <button className="work-button">+ Add Work Experience</button>
           </div>
+          <hr></hr>
 
           <div className="cv-education">
             <h2 className="cv-title">Education</h2>
-            <button>Add Education</button>
-            <hr></hr>
+            <button className="education-button">+ Add Education</button>
           </div>
+          <hr></hr>
 
           <div className="cv-skills">
             <h2 className="cv-title">Skills</h2>
-            <button>Add Skills</button>
-            <hr></hr>
+            <button className="skills-button">+ Add Skills</button>
           </div>
+          <hr></hr>
         </div>
       </div>
     );

@@ -9,10 +9,51 @@
     width: 500px;
 }
 
-.cv-title {
-    padding-top: 5px;
+.cv-header {
+    display: grid;
+    grid-template-columns: .8fr .2fr;
+    grid-template-rows: .8fr .2fr;
+    grid-template-areas: "name meta"
+                         "role role";
+}
+
+.cv-header-name {
+    grid-area: name;
 }
 
 .cv-header-name h1 {
     font-size: 42px;
+}
+
+.cv-header-name h1:last-child,
+.cv-header-role-text {
+    padding-bottom: 5px;
+}
+
+.cv-header-meta {
+    grid-area: meta;
+    text-align: end;
+}
+
+.cv-header-role {
+    grid-area: role;
+}
+
+.cv-title {
+    padding-top: 5px;
+}
+
+.work-button,
+.education-button,
+.skills-button {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+button {
+    cursor: pointer;
+    padding: 5px;
+    background-color: rgb(191, 231, 175);
+    border: .2px solid rgb(97, 97, 97);
+    border-radius: 2px;
 }

@@ -108,3 +108,27 @@ button {
     grid-template-columns: 75px 170px;
     column-gap: 5px;
 }
+
+
+.cv-list {
+    list-style-type: none;
+}
+
+.cv-list li {
+    display: grid;
+    grid-template-columns: .5fr .5fr;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    row-gap: 3px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-left: 3px solid rgb(153, 219, 91);
+}
+
+.cv-list p {
+    padding-left: 10px;
+}
+
+.cv-list-role {
+    font-weight: bold;
+}

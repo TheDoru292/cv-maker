@@ -94,15 +94,15 @@ class Work extends React.Component {
     return (
       <div className="cv-work form">
         <h2 className="cv-title">Work Experiences</h2>
-        <div className="cv-work-list-container">
-          <ul className="cv-work-list">
+        <div className="cv-list-container">
+          <ul className="cv-list">
             {list.map((item) => {
               return (
                 <li className="cv-work">
                   <p key={item.companyName + "-company"}>
                     {item.companyName}, {item.cityName}
                   </p>
-                  <p className="cv-work-list-role" key={item.role}>
+                  <p className="cv-list-role" key={item.role}>
                     {item.role}
                   </p>
                   <p key={item.from}>

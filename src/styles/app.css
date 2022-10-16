@@ -4,7 +4,7 @@
 }
 
 .App {
-    height: 100vh;
-    display: grid;
-    grid-template-rows: 50px 1fr 40px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }

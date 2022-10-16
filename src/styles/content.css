@@ -132,3 +132,12 @@ button {
 .cv-list-role {
     font-weight: bold;
 }
+
+.cv-skills-list {
+    margin-left: 14px;
+}
+
+.cv-skills-list li {
+    margin-top: 3px;
+    margin-bottom: 3px;
+}

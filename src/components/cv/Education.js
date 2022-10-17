@@ -117,16 +117,14 @@ class Education extends React.Component {
             {list.map((item) => {
               return (
                 <li key={item.id} className="cv-education">
-                  <p key={item.schoolName}>
+                  <p>
                     {item.schoolName}, {item.cityName}
                   </p>
-                  <p className="cv-list-role" key={item.degree}>
-                    {item.degree}
-                  </p>
-                  <p key={item.from}>
+                  <p className="cv-list-role">{item.degree}</p>
+                  <p>
                     {item.from} - {item.to}
                   </p>
-                  <p key={item.description}>{item.description}</p>
+                  <p>{item.description}</p>
                   <p>
                     <button onClick={(e) => this.removeFromArray(item.id)}>
                       Delete

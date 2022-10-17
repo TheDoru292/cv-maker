@@ -18,6 +18,7 @@ class Work extends React.Component {
     };
     this.handleClick = this.handleClick.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.removeFromArray = this.removeFromArray.bind(this);
   }
 
   componentDidMount() {
@@ -30,6 +31,20 @@ class Work extends React.Component {
     this.setState({
       workForm: value,
     });
+  }
+
+  removeFromArray(id) {
+    const { list } = this.state;
+
+    for (let key in list) {
+      if (list[key].id === id) {
+        let index = list.indexOf(list[key]);
+        let newList = list.slice(0, index);
+        this.setState({
+          list: newList,
+        });
+      }
+    }
   }
 
   handleChange(e) {
@@ -112,6 +127,9 @@ class Work extends React.Component {
                     {item.from} - {item.to}
                   </p>
                   <p key={item.description}>{item.description}</p>
+                  <button onClick={(e) => this.removeFromArray(item.id)}>
+                    X
+                  </button>
                 </li>
               );
             })}

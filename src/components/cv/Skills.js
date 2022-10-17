@@ -12,6 +12,21 @@ class Skills extends React.Component {
     };
 
     this.handleChange = this.handleChange.bind(this);
+    this.removeFromArray = this.removeFromArray.bind(this);
+  }
+
+  removeFromArray(id) {
+    const { list } = this.state;
+
+    for (let key in list) {
+      if (list[key].id === id) {
+        let index = list.indexOf(list[key]);
+        let newList = list.slice(0, index);
+        this.setState({
+          list: newList,
+        });
+      }
+    }
   }
 
   componentDidMount() {
@@ -77,7 +92,14 @@ class Skills extends React.Component {
         <div className="cv-list-container">
           <ul className="cv-skills-list">
             {list.map((item) => {
-              return <li key={item.id}>{item.skill}</li>;
+              return (
+                <li key={item.id}>
+                  <p>{item.skill}</p>
+                  <button onClick={(e) => this.removeFromArray(item.id)}>
+                    X
+                  </button>
+                </li>
+              );
             })}
           </ul>
         </div>

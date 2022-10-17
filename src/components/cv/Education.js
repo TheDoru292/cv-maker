@@ -18,6 +18,7 @@ class Education extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.removeFromArray = this.removeFromArray.bind(this);
   }
 
   componentDidMount() {
@@ -48,6 +49,20 @@ class Education extends React.Component {
         console.log(`${this.state.educationForm} ${this.state.schoolName}`);
       }
     );
+  }
+
+  removeFromArray(id) {
+    const { list } = this.state;
+
+    for (let key in list) {
+      if (list[key].id === id) {
+        let index = list.indexOf(list[key]);
+        let newList = list.slice(0, index);
+        this.setState({
+          list: newList,
+        });
+      }
+    }
   }
 
   addSchool() {
@@ -112,6 +127,11 @@ class Education extends React.Component {
                     {item.from} - {item.to}
                   </p>
                   <p key={item.description}>{item.description}</p>
+                  <p>
+                    <button onClick={(e) => this.removeFromArray(item.id)}>
+                      Delete
+                    </button>
+                  </p>
                 </li>
               );
             })}

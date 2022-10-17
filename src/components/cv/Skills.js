@@ -64,6 +64,7 @@ class Skills extends React.Component {
 
     this.setState(
       {
+        skillsForm: "hidden",
         list: variable,
       },
       () => {

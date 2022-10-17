@@ -116,13 +116,40 @@ button {
 
 .cv-list li {
     display: grid;
-    grid-template-columns: .5fr .5fr;
+    grid-template-columns: .3fr .7fr .1fr;
+    grid-template-areas: "fc-fr sc-fr tc-tr"
+                         "fc-sr sc-sr tc-tr";
     padding-top: 10px;
     padding-bottom: 10px;
     row-gap: 3px;
     margin-top: 5px;
     margin-bottom: 5px;
     border-left: 3px solid rgb(153, 219, 91);
+}
+
+.cv-list button {
+    justify-self: center;
+    width: 40px;
+}
+
+.grid-fc-fr {
+    grid-area: fc-fr;
+}
+
+.grid-sc-fr {
+    grid-area: sc-fr;
+}
+
+.grid-fc-sr {
+    grid-area: fc-sr;
+}
+
+.grid-sc-sr {
+    grid-area: sc-sr;
+}
+
+.grid-tc-tr {
+    grid-area: tc-tr;
 }
 
 .cv-list p {
@@ -140,4 +167,17 @@ button {
 .cv-skills-list li {
     margin-top: 3px;
     margin-bottom: 3px;
+}
+
+.cv-skills-list-container {
+    display: grid;
+    grid-template-columns: .3fr .7fr;
+}
+
+.cv-skills-list-container p {
+    font-size: 18px;
+}
+
+.cv-skills-list-container button {
+    width: 30px;
 }

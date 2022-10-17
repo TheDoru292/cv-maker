@@ -94,10 +94,12 @@ class Skills extends React.Component {
             {list.map((item) => {
               return (
                 <li key={item.id}>
-                  <p>{item.skill}</p>
-                  <button onClick={(e) => this.removeFromArray(item.id)}>
-                    X
-                  </button>
+                  <div className="cv-skills-list-container">
+                    <p>{item.skill}</p>
+                    <button onClick={(e) => this.removeFromArray(item.id)}>
+                      X
+                    </button>
+                  </div>
                 </li>
               );
             })}

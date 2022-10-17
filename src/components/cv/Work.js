@@ -117,15 +117,18 @@ class Work extends React.Component {
             {list.map((item) => {
               return (
                 <li key={item.id} className="cv-work">
-                  <p>
+                  <p className="grid-fc-fr">
                     {item.companyName}, {item.cityName}
                   </p>
-                  <p className="cv-list-role">{item.role}</p>
-                  <p>
+                  <p className="cv-list-role grid-sc-fr">{item.role}</p>
+                  <p className="grid-fc-sr">
                     {item.from} - {item.to}
                   </p>
-                  <p>{item.description}</p>
-                  <button onClick={(e) => this.removeFromArray(item.id)}>
+                  <p className="grid-sc-sr">{item.description}</p>
+                  <button
+                    className="grid-tc-tr"
+                    onClick={(e) => this.removeFromArray(item.id)}
+                  >
                     X
                   </button>
                 </li>

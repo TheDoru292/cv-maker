@@ -1,5 +1,7 @@
 import React from "react";
 
+const uniqid = require("uniqid");
+
 class Education extends React.Component {
   constructor() {
     super();
@@ -56,6 +58,7 @@ class Education extends React.Component {
       to: this.state.to,
       degree: this.state.degree,
       description: this.state.description,
+      id: uniqid(),
     };
     let variable = this.state.list.concat(schoolItem);
     this.setState(
@@ -98,7 +101,7 @@ class Education extends React.Component {
           <ul className="cv-list">
             {list.map((item) => {
               return (
-                <li className="cv-education">
+                <li key={item.id} className="cv-education">
                   <p key={item.schoolName}>
                     {item.schoolName}, {item.cityName}
                   </p>

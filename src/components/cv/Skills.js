@@ -1,5 +1,7 @@
 import React from "react";
 
+const uniqid = require("uniqid");
+
 class Skills extends React.Component {
   constructor() {
     super();
@@ -41,6 +43,7 @@ class Skills extends React.Component {
   addSkill() {
     let skill = {
       skill: this.state.skill,
+      id: uniqid(),
     };
     let variable = this.state.list.concat(skill);
 
@@ -74,7 +77,7 @@ class Skills extends React.Component {
         <div className="cv-list-container">
           <ul className="cv-skills-list">
             {list.map((item) => {
-              return <li key={item.skill}>{item.skill}</li>;
+              return <li key={item.id}>{item.skill}</li>;
             })}
           </ul>
         </div>

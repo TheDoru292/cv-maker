@@ -3,8 +3,8 @@ import React from "react";
 const uniqid = require("uniqid");
 
 class Skills extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       skillsForm: "hidden",
       skill: "",
@@ -62,15 +62,10 @@ class Skills extends React.Component {
     };
     let variable = this.state.list.concat(skill);
 
-    this.setState(
-      {
-        skillsForm: "hidden",
-        list: variable,
-      },
-      () => {
-        console.log(this.state.list);
-      }
-    );
+    this.setState({
+      skillsForm: "hidden",
+      list: variable,
+    });
   }
 
   handleChange(e) {
@@ -97,7 +92,10 @@ class Skills extends React.Component {
                 <li key={item.id}>
                   <div className="cv-skills-list-container">
                     <p>{item.skill}</p>
-                    <button onClick={(e) => this.removeFromArray(item.id)}>
+                    <button
+                      className={this.props.mode === "edit" ? "show" : "hidden"}
+                      onClick={(e) => this.removeFromArray(item.id)}
+                    >
                       X
                     </button>
                   </div>
@@ -109,7 +107,11 @@ class Skills extends React.Component {
         <button
           className={
             "skills-button " +
-            (this.state.skillsForm === "hidden" ? "show" : "hidden")
+            (this.props.mode === "edit"
+              ? this.state.skillsForm === "hidden"
+                ? "show"
+                : "hidden"
+              : "hidden")
           }
           onClick={(e) => this.handleClick("show")}
         >

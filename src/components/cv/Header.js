@@ -1,8 +1,8 @@
 import React from "react";
 
 class Header extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       firstNameInput: false,
@@ -29,14 +29,16 @@ class Header extends React.Component {
   changeToInput(stateVar) {
     console.log(stateVar);
 
-    this.setState(
-      {
-        [stateVar]: true,
-      },
-      () => {
-        console.log(this.state.firstNameInput);
-      }
-    );
+    if (this.props.mode === "edit") {
+      this.setState(
+        {
+          [stateVar]: true,
+        },
+        () => {
+          console.log(this.state.firstNameInput);
+        }
+      );
+    }
   }
 
   handleChange(e) {

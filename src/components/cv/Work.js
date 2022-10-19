@@ -3,8 +3,8 @@ import React from "react";
 const uniqid = require("uniqid");
 
 class Work extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       workItem: "",
       companyName: "",
@@ -126,7 +126,10 @@ class Work extends React.Component {
                   </p>
                   <p className="grid-sc-sr">{item.description}</p>
                   <button
-                    className="grid-tc-tr"
+                    className={
+                      "grid-tc-tr " +
+                      (this.props.mode === "edit" ? "show" : "hidden")
+                    }
                     onClick={(e) => this.removeFromArray(item.id)}
                   >
                     X
@@ -139,7 +142,11 @@ class Work extends React.Component {
         <button
           className={
             "work-button " +
-            (this.state.workForm === "hidden" ? "show" : "hidden")
+            (this.props.mode === "edit"
+              ? this.state.workForm === "hidden"
+                ? "show"
+                : "hidden"
+              : "hidden")
           }
           onClick={(e) => this.handleClick("show")}
         >
